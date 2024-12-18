@@ -7,7 +7,6 @@
 
 ParamikoJL is a Julia package that wraps the Python libraries `paramiko` and `scp` to provide SSH and SCP functionalities. It enables secure file transfer and remote command execution using SSH in a Julia environment.
 
----
 
 ## Features
 
@@ -17,8 +16,6 @@ ParamikoJL is a Julia package that wraps the Python libraries `paramiko` and `sc
 - **SSH Jump Host**: Handle connections through an SSH proxy (jump host).
 - **Automatic Reconnection**: Reconnect automatically upon connection errors.
 - **SSH Config Integration**: Load connection details from `.ssh/config`.
-
----
 
 ## Installation
 
@@ -31,8 +28,6 @@ To use ParamikoJL, you need PyCall package and the required Python dependencies 
    Pkg.add("FilePathsBase")
 2. Install the Python dependencies:
    ``` pip install paramiko scp
-   
----
 
 ## Usage
 
@@ -74,8 +69,6 @@ reconnect!(ssh)
  ```julia
 close!(ssh)
 '''
-
----
 
 ## API Reference
 
