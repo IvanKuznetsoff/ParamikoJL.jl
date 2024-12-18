@@ -46,5 +46,6 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: false
       - uses: julia-actions/julia-uploadcoveralls@v1
+        continue-on-error: true
         env:
           COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
