@@ -5,10 +5,10 @@ using Printf
 using Dates
 
 # Import Python libraries
-@pyimport paramiko
-@pyimport scp
-@pyimport os as pyos
-@pyimport builtins
+paramiko = pyimport("paramiko")
+scp = pyimport("scp")
+pyos  = pyimport("os")
+builtins = pyimport("builtins")
 
 abstract type AbstractSSHClient end
 mutable struct SSHClient <: AbstractSSHClient
