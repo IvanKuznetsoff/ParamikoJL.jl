@@ -13,7 +13,7 @@ ParamikoJL is a Julia package that wraps the Python libraries `paramiko` and `sc
 - **SSH Client**: Create and manage SSH connections.
 - **SCP Client**: Transfer files securely using SCP.
 - **SFTP Client**: Manage remote files via SFTP.
-- **SSH Jump Host**: Handle connections through an SSH proxy (jump host).
+- **SSH Jump Host**: Handle connections through an SSH proxy jump.
 - **Automatic Reconnection**: Reconnect automatically upon connection errors.
 - **SSH Config Integration**: Load connection details from `.ssh/config`.
 
