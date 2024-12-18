@@ -38,28 +38,28 @@ mutable struct SCPClient <: AbstractSSHClient
     pyobj :: PyObject
     ssh   :: AbstractSSHClient
 end
-function Base.getproperty(h::AbstractSSHClient, s::Symbol) #構造体を引数に保つ関数！
+function Base.getproperty(h::AbstractSSHClient, s::Symbol) 
     if s == :pyobj || s == :config || s == :name
         getfield(h, s)
     else
         getproperty(getfield(h, :pyobj), s)
     end
 end
-function Base.getproperty(h::SSHJumpClient, s::Symbol) #構造体を引数に保つ関数！
+function Base.getproperty(h::SSHJumpClient, s::Symbol) 
     if s == :pyobj || s == :config || s == :name || s == :proxy
         getfield(h, s)
     else
         getproperty(getfield(h, :pyobj), s)
     end
 end
-function Base.getproperty(h::SFTPClient, s::Symbol) #構造体を引数に保つ関数！
+function Base.getproperty(h::SFTPClient, s::Symbol) 
     if s == :pyobj || s == :config || s == :name || s == :ssh
         getfield(h, s)
     else
         getproperty(getfield(h, :pyobj), s)
     end
 end
-function Base.getproperty(h::SCPClient, s::Symbol) #構造体を引数に保つ関数！
+function Base.getproperty(h::SCPClient, s::Symbol) 
     if s == :pyobj || s == :config || s == :name || s == :ssh
         getfield(h, s)
     else
