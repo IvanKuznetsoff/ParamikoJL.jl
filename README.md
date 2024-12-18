@@ -30,6 +30,52 @@ To use ParamikoJL, you need PyCall package and the required Python dependencies 
    ```sh
    pip install paramiko scp
    ```
+## Setting Up SSH Configuration
+
+To ensure secure SSH connections using public key authentication, follow these steps to register your SSH host in the `.ssh/config` file:
+
+1. Generate an SSH Key Pair (if you haven't already):
+
+    ```bash
+    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+    ```
+
+    Follow the prompts to save the key in the default location (`~/.ssh/id_rsa`) and set a passphrase if desired.
+
+2. Copy the Public Key to the Remote Server:
+
+    ```bash
+    ssh-copy-id username@ssh_server_name
+    ```
+
+3. Edit the `.ssh/config` File:
+
+    Open the `.ssh/config` file in your preferred text editor. If it doesn't exist, create it:
+
+    ```bash
+    nano ~/.ssh/config
+    ```
+
+    Add the following configuration:
+
+    ```config
+    Host ssh_server_name
+        HostName your.server.address
+        User your_username
+        Port 22
+        IdentityFile ~/.ssh/id_rsa
+        PreferredAuthentications publickey
+    ```
+
+4. **Test the SSH Connection**:
+
+    Use the following command to test your SSH connection:
+
+    ```bash
+    ssh -T ssh_server_name
+    ```
+    
+    Replace `ssh_server_name` with a name for your server, `your.server.address` with the actual server address, and `your_username` with your SSH username.
 
 ## Usage
 
