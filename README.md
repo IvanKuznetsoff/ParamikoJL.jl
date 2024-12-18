@@ -72,7 +72,7 @@ reconnect!(ssh)
 close!(ssh)
 ```
 
-## API Reference
+## Quick Reference
 
 ### Exported Types
 
