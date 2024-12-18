@@ -5,10 +5,18 @@ using Printf
 using Dates
 
 # Import Python libraries
-paramiko = pyimport("paramiko")
-scp = pyimport("scp")
-pyos  = pyimport("os")
-builtins = pyimport("builtins")
+const paramiko = PyNULL()
+const scp = PyNULL()
+const pyos  = PyNULL()
+const builtins = PyNULL()
+
+
+function __init__()
+    copy!(paramiko, pyimport("paramiko"))
+    copy!(scp, pyimport("scp"))
+    copy!(pyos, pyimport("os"))
+    copy!(builtins, pyimport("builtins"))
+end
 
 abstract type AbstractSSHClient end
 mutable struct SSHClient <: AbstractSSHClient
