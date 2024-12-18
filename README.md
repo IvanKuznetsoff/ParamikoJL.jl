@@ -27,7 +27,9 @@ To use ParamikoJL, you need PyCall package and the required Python dependencies 
    Pkg.add("PyCall")
    Pkg.add("FilePathsBase")
 2. Install the Python dependencies:
-   ``` pip install paramiko scp
+   ```sh
+   pip install paramiko scp
+   ```
 
 ## Usage
 
