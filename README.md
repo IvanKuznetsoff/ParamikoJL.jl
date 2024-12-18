@@ -70,7 +70,7 @@ reconnect!(ssh)
  Close the connections when file transfer is done:
  ```julia
 close!(ssh)
-'''
+```
 
 ## API Reference
 
