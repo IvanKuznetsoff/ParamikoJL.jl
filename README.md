@@ -30,6 +30,10 @@ To use ParamikoJL, you need PyCall package and the required Python dependencies 
    ```sh
    pip install paramiko scp
    ```
+3. Install the `ParamikoJL` package using the Julia package manager:
+    ```julia
+    ] add https://github.com/IvanKuznetsoff/ParamikoJL.jl
+    ```
 ## Setting Up SSH Configuration
 
 To ensure secure SSH connections using public key authentication, follow these steps to register your SSH host in the `.ssh/config` file:
