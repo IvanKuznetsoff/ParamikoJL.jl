@@ -3,6 +3,12 @@ uuid = "7ccbf5de-f121-4567-b32c-a379ad4c4d21"
 authors = ["Shunsuke Nishimura"]
 version = "1.0.0-DEV"
 
+[deps]
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+FilePathsBase = "48062228-2e41-5def-b9a4-89aafe57970f"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
+
 [compat]
 julia = "1.6.7"
 
