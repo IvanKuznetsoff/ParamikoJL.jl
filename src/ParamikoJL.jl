@@ -249,8 +249,8 @@ function mkdir(
     end
     return 
 end
-import Base.chdir
-function mkdir(
+import Base.cd
+function cd(
         sftp    :: SFTPClient,
         dir     :: String)
     try
