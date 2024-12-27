@@ -236,6 +236,32 @@ function readdir(
     end
     return fn_list
 end
+import Base.mkdir
+function mkdir(
+        sftp    :: SFTPClient,
+        dir     :: String)
+    try
+        sftp.mkdir(dir)
+    catch
+        reconnect!(sftp)
+        @info("SSH reconnected!")
+        sftp.mkdir(dir)
+    end
+    return 
+end
+import Base.chdir
+function mkdir(
+        sftp    :: SFTPClient,
+        dir     :: String)
+    try
+        sftp.chdir(dir)
+    catch
+        reconnect!(sftp)
+        @info("SSH reconnected!")
+        sftp.chdir(dir)
+    end
+    return 
+end
 import Base.download
 function download(
     scp             :: SCPClient,
