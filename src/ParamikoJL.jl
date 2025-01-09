@@ -96,6 +96,22 @@ function SSHJumpClient(proxy :: SSHClient, alias :: String)
     )
     return SSHJumpClient(ssh, alias, config, proxy)
 end
+function SSHJumpClient(proxy :: SSHJumpClient, alias :: String)
+    config = load_ssh_config(alias)
+    key = paramiko.RSAKey.from_private_key_file(
+    config["identityfile"])
+    sock = proxy.get_transport().open_channel(
+        "direct-tcpip", 
+        (config["hostname"], config["port"]), 
+        ("", proxy.config["port"])
+    )
+    ssh = paramiko.Transport(sock)
+    ssh.connect(
+        username    = config["username"],
+        pkey        = key
+    )
+    return SSHJumpClient(ssh, alias, config, proxy)
+end
 function reconnect!(ssh :: SSHClient)
     pyssh = paramiko.SSHClient()
     pyssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
